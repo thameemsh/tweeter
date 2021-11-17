@@ -1,6 +1,6 @@
 nav {
   display: flex;
-  background-color: #4056A1;
+  background-color: #03277ce3;
   color: #FFFFFF;
   align-items: center;
   width: 100%;
@@ -26,6 +26,6 @@ nav {
 
 .fa-angle-double-down {
   font-size: 0.7em;
-  color: red;
+  color: #ff0000;
   padding-right: 5em;
 }
