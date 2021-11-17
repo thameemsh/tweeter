@@ -31,30 +31,30 @@ label{
 
 textarea{
   flex-basis: 100%;
-  padding-bottom: 0.3em;
+  background-color: #715108 ;
+  border:3px solid #715108;
+  border-bottom: 5px solid black;
+  color: white;
+  font-weight: bold;
 }
+
 
 .tweetcount {
   flex-basis: 100%;
   display: flex;
   padding-top: 0.3em;
   /* flex-wrap: wrap; */
-  /* justify-content: flex-start; */
+  justify-content: space-between;
 }
 
+
 button{
-flex-basis: 15%;
-/* flex-grow: 1; */
 background-color: #03277ce3;
 color: white;
 font-family: 'Bungee', cursive;
 }
 
 .counter{
-  flex-basis: 85%;
-  /* flex-grow: 1; */
-  align-self: flex-end;
-  text-align: right;
   font-family: 'Bungee', cursive;
   color: white;
 }
