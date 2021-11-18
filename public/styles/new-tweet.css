@@ -15,6 +15,12 @@ h2 {
  height: auto;
 }
 
+.errorLong, .errorShort {
+  display: none;
+  font-weight: bold;
+  color: red;
+}
+
 
 form {
   width: 100%;
