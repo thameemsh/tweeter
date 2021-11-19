@@ -20,5 +20,5 @@ This repository is the starter code for the project: Students will fork and clon
 
 ##Screenshots
 
-!["Screenshot of tweeter homepage in large screen"]()
-!["Screenshot of tweeter homepage in large screen"]()
+!["Screenshot of tweeter homepage in large screen"](https://github.com/thameemsh/tweeter/blob/master/docs/Tweeter_home_page_large_screen.PNG)
+!["Screenshot of tweeter homepage in large screen"](https://github.com/thameemsh/tweeter/blob/master/docs/Tweeter_home_page_small_screen.PNG)
