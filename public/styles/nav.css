@@ -1,6 +1,5 @@
 nav {
   display: flex;
-  background-color: #03277ce3;
   color: #FFFFFF;
   align-items: center;
   width: 100%;
@@ -9,6 +8,8 @@ nav {
   top: 0;
   width: 100%;
   overflow: hidden;
+  background-color: #ca910da9;
+  background-image: url("https://www.transparenttextures.com/patterns/shley-tree-2.png");
  }
 
 .nav-left {

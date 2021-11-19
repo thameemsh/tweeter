@@ -1,13 +1,14 @@
 
 $(document).ready(function () {
+
+  //Function to generate tweet post body
   const createTweetElement = function (tweet) {
 
-
     let $tweet = `<article >
-<header class="old-tweet-header">
+               <header class="old-tweet-header">
 <div class="old-header-left">
 <img class = "old-tweet-img" src="${tweet.user.avatars}" > 
-<span>${tweet.user.name}</span>
+<span class="img-name-tag" >${tweet.user.name}</span>
 </div>
 <span class="name-tag">${tweet.user.handle}</span>
 </header>
@@ -28,15 +29,8 @@ $(document).ready(function () {
     return $tweet;
   }
 
-  const escape = function (str) {
-    let div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  };
-
-
+  // To render several tweets
   const renderTweets = function (tweets) {
-
     for (const tweet of tweets) {
       console.log(tweet)
       const $tweet = createTweetElement(tweet);
@@ -44,39 +38,49 @@ $(document).ready(function () {
     }
   }
 
+  // Escape function to avoid cross Site Scripting(XSS)
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+  //Ajax get request and rendering tweets in the page
   const loadTweets = function () {
     $.ajax({
-      url: `/tweets`,
-      method: 'GET',
-    })
-      .then(function (tweetresponse) {
-        renderTweets(tweetresponse);
-      });
+      url: "/tweets",
+      method: "GET",
+    }).then((response) => renderTweets(response));
   }
 
+  //Calling the function to populate the page with previous tweets
+  loadTweets()
 
+  // Ajax post request up on submitting the form
   $("#tweet-form").submit(function (event) {
     event.preventDefault();
-    const $form = $(this);
-    const serializedFormData = $form.serialize();
 
-    let tweetLen = $('#tweet-text').val().length
+    const serializedFormData = $(this).serialize();
+    let tweetLen = $(this).find('#tweet-text').val().length
     if (tweetLen > 140) {
       $(".errorLong").fadeIn().fadeOut(3000)
-    } else if (tweetLen <= 0) {
+    } else if (tweetLen === 0) {
       $(".errorShort").fadeIn().fadeOut(3000)
     } else {
-
       $.ajax({
-        url: $form.attr('action'),
-        type: $form.attr('method'),
+        url: "/tweets",
+        type: "POST",
         data: serializedFormData,
-        success: loadTweets()
-      });
-      $("form")[0].reset();
+      })
+        .then(function () {
+          $('#tweet-text').val("")
+          $(".counter").text(140)
+          $("#tweets-form").empty();
+          loadTweets()
+        });
     }
   });
 
-  loadTweets();
+
 });
 

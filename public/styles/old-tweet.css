@@ -6,7 +6,6 @@ article {
   width: 100%;
   height: auto;
   padding: 15px;
-
 }
 
 article:hover{
@@ -32,12 +31,6 @@ article:hover{
   margin-left: 10px;
   justify-content: center;
 }
-
-/* .name-tag {
-  display: flex;
-  align-self: center;
-  margin: 5px;
-} */
 
 .old-tweet-img {
   width: 100px;

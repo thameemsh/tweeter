@@ -1,8 +1,6 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-// Counter for test area
-
-  $('#tweet-text').on('keyup', function() {
+  $('#tweet-text').on('keyup', function () {
 
     //Get the length of the textarea after deducting 140
     let tweetLen = 140 - $(this).val().length;
@@ -12,15 +10,13 @@ $(document).ready(function() {
 
     // Update the counter.text
     $counter.text(tweetLen);
-    
-     // to change the color to red when characters exceed 140 by adding seperate class else remove that class.
-    if(tweetLen < 0){
+
+    // to change the color to red when characters exceed 140 by adding seperate class else remove that class.
+    if (tweetLen < 0) {
       return $counter.addClass('overlimit');
     } else {
       $counter.removeClass('overlimit');
     }
-
   })
-  
 
 });

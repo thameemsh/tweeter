@@ -1,3 +1,6 @@
+
+
+
 header.main-header {
   display: flex;
   flex-direction: column;
@@ -9,5 +12,55 @@ header.main-header {
   margin-top: 120px;
   background-color: #ca910da9;
 background-image: url("https://www.transparenttextures.com/patterns/shley-tree-2.png");
+
+}
+
+.bounce {
+  margin: 8% 0;
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  90% {
+    transform: translateY(-5px);
+  }
+}
+
+
+@media (min-width : 720px) {
+
+  body{
+    display:flex;
+  }
+
+  nav {
+    /* flex-basis:50%; */
+    background-color: #03277ce3;
+    background-image: none;
+  }
+
+  .responsive {
+    display:flex;
+    margin-top: 50px;
+    justify-content: space-around;
+   }
+
+  .container{
+    flex-basis:50%;
+    margin-top: 120px;
+  }
+
+  .main-header{
+    flex-basis:50%;
+    margin-top: 120px;
+  }
 
 }

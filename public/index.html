@@ -14,7 +14,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
 
-
   <!-- Source Sans Pro Font--->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,10 +53,12 @@
     integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+  <!--Setting the Viewport-->
+  <meta content="width=device-width, initial-scale=1" name="viewport">
 </head>
 
 <body>
-  <!-- Top nav bar (fixed) -->
+
   <nav>
     <div class=nav-left>tweeter</div>
     <div class=nav-right>
@@ -65,41 +66,49 @@
         <b>Write</b> a new tweet <br>
       </div>
       <div>
-        <i class="fas fa-angle-double-down"></i>
+        <i class="fas fa-angle-double-down bounce"></i>
       </div>
     </div>
-
   </nav>
 
-  <header class="main-header">
-    <div>
-      <img class="profilepic" src="/images/profile-hex.png">
-      <!-- <br><h2>Angela</h2> -->
-    </div>
-    <!-- <br> -->
-    <div class="profilename">
-      <h2>Angela</h2>
-    </div>
-  </header>
+  <div class="responsive">
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
+    <header class="main-header">
+      <div>
+        <img class="profilepic" src="/images/profile-hex.png">
+      </div>
+      <div class="profilename">
+        <h2>Angela</h2>
+      </div>
+    </header>
 
-    <section class="new-tweet">
-       <h2>Compose Tweet</h2>
-       <p class="errorLong">Too Long exceed 140 character limit!. Data doesn't on trees. </p>
-       <p class="errorShort">Too Short. Please tweet to send tweet! </p>
-      <form id="tweet-form" action="/tweets" method="POST">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div class=tweetcount>
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
-    <article id="tweets-container"></article>
-    <!-- <article >
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <h3>Compose Tweet</h3>
+        <p class="errorLong">Too Long exceeded 140 character limit!. </p>
+        <p class="errorShort">Too Short. Please write something to send a tweet! </p>
+        <form id="tweet-form" action="/tweets" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class=tweetcount>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+
+      <article id="tweets-container"></article>
+    </main>
+
+  </div>
+</body>
+
+</html>
+
+
+<!--Format of the new tweets generated-->
+<!-- <article >
           <header class="old-tweet-header">
             <div class="old-header-left">
               <img class = "old-tweet-img" src="/images/Girl-avatar.png" > 
@@ -119,31 +128,4 @@
               <i class="fas fa-heart"></i>
             </div>
           </footer>
-      </article>
-
-      <article >
-        <header class="old-tweet-header">
-          <div class="old-header-left">
-            <img class = "old-tweet-img" src="/images/boy-avatar.png" > 
-            <span>Humphry Davy</span>
-          </div>
-          <span class="name-tag">@MrHumpryDavy</span>
-        </header>
-
-        <div class="old-tweet-text">
-          <p id="past-tweet">I was gonna tell a joke about sodium, but Na!</p>
-        </div>
-        <footer class="old-tweet-footer">
-          <div class="time passed">12 Days Ago</div>
-          <div class="react icons">
-            <i class="fas fa-flag"></i>
-            <i class="fas fa-retweet"></i>
-            <i class="fas fa-heart"></i>
-          </div>
-        </footer>
     </article> -->
-  </main>
-
-</body>
-
-</html>
